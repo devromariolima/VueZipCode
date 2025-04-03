@@ -2,17 +2,15 @@
   <div class="cep-form">
     <h1>Buscar Endereço pelo CEP</h1>
 
-    <!-- Campo para entrada do CEP -->
+  
     <div>
       <label for="cep">CEP:</label>
       <input type="text" v-model="cep" placeholder="Digite o CEP" />
       <button @click="buscarEndereco">Buscar</button>
     </div>
 
-    <!-- Loader mostrado enquanto os dados estão carregando -->
     <div v-if="carregando" class="loader"></div>
 
-    <!-- Exibindo os dados do endereço -->
     <div v-if="endereco && !carregando">
       <h2>Informações do Endereço:</h2>
       <p><strong>Logradouro:</strong> {{ endereco.logradouro }}</p>
@@ -28,7 +26,6 @@
       <p><strong>SIAFI:</strong> {{ endereco.siafi }}</p>
     </div>
 
-    <!-- Exibindo uma mensagem de erro, se houver -->
     <div v-if="erro && !carregando">
       <p>{{ erro }}</p>
     </div>
@@ -39,15 +36,15 @@
 export default {
   data() {
     return {
-      cep: '', // CEP digitado pelo usuário
-      endereco: null, // Dados do endereço retornado pela API
-      erro: '', // Mensagem de erro caso ocorra
-      carregando: false // Indicador de carregamento
+      cep: '',
+      endereco: null,
+      erro: '',
+      carregando: false
     };
   },
   methods: {
     async buscarEndereco() {
-      this.carregando = true; // Inicia o carregamento
+      this.carregando = true;
       this.endereco = null;
       this.erro = '';
 
@@ -65,8 +62,8 @@ export default {
             bairro: data.bairro,
             localidade: data.localidade,
             uf: data.uf,
-            estado: 'São Paulo', // Valor fixo para o exemplo
-            regiao: 'Sudeste', // Valor fixo para o exemplo
+            estado: data.estado,
+            regiao: data.regiao,
             ibge: data.ibge,
             gia: data.gia || 'N/A',
             ddd: data.ddd,
@@ -76,7 +73,7 @@ export default {
       } catch (error) {
         this.erro = 'Erro ao buscar o endereço. Verifique o CEP e tente novamente.';
       } finally {
-        this.carregando = false; // Finaliza o carregamento
+        this.carregando = false;
       }
     }
   }
