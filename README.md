@@ -59,3 +59,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - CSS: Estilização e design responsivo
 
 - API: ViaCE
+
+
+<img src="https://i.imgur.com/Sv1JAFn.png" alt="Desktop Screenshot" width="200" height="200"/>
