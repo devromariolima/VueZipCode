@@ -61,4 +61,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - API: ViaCE
 
 
-<img src="https://i.imgur.com/Sv1JAFn.png" alt="Desktop Screenshot" width="200" height="200"/>
+<img src="https://i.imgur.com/Sv1JAFn.png" alt="Desktop Screenshot" width="400" height="400"/>
